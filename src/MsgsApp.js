@@ -1,10 +1,8 @@
 import React from 'react'
 import { messages } from './data/msgs'
-import { loadingImages } from './helpers/loadingImages';
 export const MsgsApp = () => {
 
     const msgs = messages;
-    console.log(msgs)
    
     return (
         <>
@@ -70,11 +68,7 @@ export const MsgsApp = () => {
                         </div>
                         <div className="dric-content">
                             <div className="dric-icon">
-                                <img 
-                                    src='./assets/sent.svg'
-                                    alt='hola'
-                                />
-
+                                <img src="./assets/sent.svg" alt=""/>
                             </div>
                             <div className="dric-text">
                                 <h5>Mensajes enviados</h5>
@@ -148,27 +142,46 @@ export const MsgsApp = () => {
         </div>
 
         <div className="messages">
-            <div style={{"overflowX":"auto"}}>
+            <div style={{overflowX:'auto'}}>
                 <table>
-                  <tr>
-                    <th>Título</th>
-                    <th>Estado</th>
-                    <th>Fecha de creación</th>
-                    <th>Efectividad</th>
-                  </tr>
-                    {
-                        msgs.map(msg =>(
-                            <tr
-                            key={msg.id}
-                            >
-                                <td>{msg.title}</td>
-                                <td>{msg.status} <img src="./assets/loading-svgrepo-com.svg" alt=""/> </td>
-                                <td>{msg.date}</td>
-                                <td>{msg.effectiveness}</td>
-                            </tr>
-                        ))
-                        
-                    }
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Estado</th>
+                            <th>Fecha de creación</th>
+                            <th>Efectividad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            msgs.map(msg =>(
+                                <tr
+                                key={msg.id}
+                                >
+                                    <td>{msg.title}</td>
+                                    <td>
+                                        {
+                                            (msg.status === 'true')?
+                                            <>
+                                                Verificado
+                                                <img src="./assets/verified.svg" alt=""/> 
+                                            </>
+                                            :
+                                            <>
+                                                En revision
+                                                <img src="./assets/loading-svgrepo-com.svg" alt=""/> 
+                                            </>
+                                            
+                                        } 
+                                    </td>
+                                    <td>{msg.date}</td>
+                                    <td>{msg.effectiveness}</td>
+                                </tr>
+                            ))
+                            
+                        }
+                    </tbody>
+
 
                  
                 </table>

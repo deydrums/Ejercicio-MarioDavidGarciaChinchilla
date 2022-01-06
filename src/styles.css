@@ -204,6 +204,47 @@ table {
     width: 1.5rem;
 }
 
+.pag{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pag .pagination{
+    list-style: none;
+    display: flex;
+    margin-top:2rem;
+}
+.pag .pagination>li>a,
+.pag .pagination>li>span {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    cursor: pointer;
+}
+
+.pag .pagination>li>a:hover,
+.pag .pagination>li>span {
+    background: rgb(223, 223, 223);
+}
+
+.pag .pagination>li.active>a {
+    border: 1px solid #dee2e6;
+    background: #007bff;
+    color: rgb(255, 255, 255);
+}
+
+.pag .pagination>li.disabled>a {
+    background: #c9c9c9;
+    color: rgb(255, 255, 255);
+    cursor: not-allowed !important;
+}
+
 @media(max-width:991px){
 
     .dashboard{
@@ -255,5 +296,7 @@ table {
     }
 
 }
+
+
 
 

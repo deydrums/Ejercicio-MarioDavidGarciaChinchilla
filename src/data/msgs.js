@@ -48,4 +48,32 @@ export const messages = [
         'date':'30-07-2021	',
         'effectiveness':'0%'
     },
+    {
+        'id': '8',
+        'title':'Mensaje de prueba 8 ', 
+        'status':'true', 
+        'date':'30-07-2021	',
+        'effectiveness':'0%'
+    },
+    {
+        'id': '9',
+        'title':'Mensaje de prueba 9 ', 
+        'status':'true', 
+        'date':'30-07-2021	',
+        'effectiveness':'0%'
+    },
+    {
+        'id': '10',
+        'title':'Mensaje de prueba 10 ', 
+        'status':'true', 
+        'date':'30-07-2021	',
+        'effectiveness':'0%'
+    },
+    {
+        'id': '11',
+        'title':'Mensaje de prueba 11 ', 
+        'status':'true', 
+        'date':'30-07-2021	',
+        'effectiveness':'70%'
+    },
 ]

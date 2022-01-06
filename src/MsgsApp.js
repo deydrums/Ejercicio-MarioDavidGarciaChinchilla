@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { messages } from './data/msgs'
+
+import ReactPaginate from 'react-paginate';
+
+
 export const MsgsApp = () => {
 
     const msgs = messages;
+
+    const [pageNumber, setpageNumber] = useState(0);
+    const msgsPerPage = 4;
+    const pagesVisited = pageNumber * msgsPerPage;
+    const displayMsgs = msgs.slice(pagesVisited, pagesVisited + msgsPerPage);
+    const pageCount = Math.ceil(msgs.length / msgsPerPage);
+    const changePage = ({selected}) => {
+        setpageNumber(selected)
+    }
+
    
     return (
         <>
@@ -154,7 +168,7 @@ export const MsgsApp = () => {
                     </thead>
                     <tbody>
                         {
-                            msgs.map(msg =>(
+                            displayMsgs.map(msg =>(
                                 <tr
                                 key={msg.id}
                                 >
@@ -185,7 +199,27 @@ export const MsgsApp = () => {
 
                  
                 </table>
+
               </div>
+                <div className="pag">
+                <ReactPaginate
+                            previousLabel = "< anterior"
+                            nextLabel = "siguiente >"
+                            pageCount = {pageCount}
+                            onPageChange ={changePage}
+                            containerClassName={"pagination pagination-sm flex-wrap"}
+                            breakClassName={"page-item"}
+                            pageClassName={"page-item"}
+                            nextClassName={"page-item"}
+                            previousClassName={"page-item"}
+                            breakLinkClassName={"page-link"}
+                            pageLinkClassName={"page-link"}
+                            previousLinkClassName={"page-link"}
+                            nextLinkClassName={"page-link"}
+                            disabledClassName={"disabled"}
+                            activeClassName={"active"}
+                        />
+                </div>
         </div>
 
         <div className="button">

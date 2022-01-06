@@ -203,8 +203,8 @@ export const MsgsApp = () => {
               </div>
                 <div className="pag">
                 <ReactPaginate
-                            previousLabel = "< anterior"
-                            nextLabel = "siguiente >"
+                            previousLabel = "<<"
+                            nextLabel = ">>"
                             pageCount = {pageCount}
                             onPageChange ={changePage}
                             containerClassName={"pagination pagination-sm flex-wrap"}
@@ -231,6 +231,7 @@ export const MsgsApp = () => {
             </div>
         </div>
     </main>
+
         </>
     )
 }

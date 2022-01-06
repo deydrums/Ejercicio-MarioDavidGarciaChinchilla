@@ -1,3 +1,4 @@
+/*Data (messsages) */
 export const messages = [
     {
         'id': '1',

@@ -6,8 +6,10 @@ import ReactPaginate from 'react-paginate';
 
 export const MsgsApp = () => {
 
+    //Loading data messages
     const msgs = messages;
 
+    //Config Pagination
     const [pageNumber, setpageNumber] = useState(0);
     const msgsPerPage = 4;
     const pagesVisited = pageNumber * msgsPerPage;
